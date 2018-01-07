@@ -1,0 +1,91 @@
+{
+    //main segment
+    "StreamTags": [
+        {
+            "streamUniqueId1": "Engineering",
+            "streamUniqueId2": "Medical",
+            "streamUniqueId3": "Art"
+        }
+    ],
+    "InterestTags": [
+        {
+            "StreamUniqueId1": [
+                {
+                    "InterestTagsUniqueId1": "Electronics and comminications",
+                    "InterestTagsUniqueId2": "Electronics and comminications",
+                    "InterestTagsUniqueId3": "Electronics and comminications"
+                }
+            ],
+            "StreamUniqueId2": [
+                {
+                    "InterestTagsUniqueId1": "Electronics and comminications",
+                    "InterestTagsUniqueId2": "Electronics and comminications",
+                    "InterestTagsUniqueId3": "Electronics and comminications"
+                }
+            ]
+        }
+    ],
+    "Users": [
+        {
+            "UserUniqueId1": 
+            {
+                "Email": "",
+                "Password": "",
+                "StreamId": [
+                    "streamUniqueId1"
+                ],
+                "InterestTag": [
+                    "streamUniqueId1"
+                ],
+                "About": "",
+                "ProfilePhotoUrl": "",
+                "ThumbNailPhotoUrl": ""
+            }
+        },
+        {
+            "UserUniqueId1": 
+            {
+                "Email": "",
+                "Password": "",
+                "StreamId": [
+                    "streamUniqueId1"
+                ],
+                "InterestTag": [
+                    "streamUniqueId1"
+                ],
+                "About": "",
+                "ProfilePhotoUrl": "",
+                "ThumbNailPhotoUrl": ""
+            }
+        }
+        
+    ],
+    "LiveFeed": [
+        {
+            "InterestTag": "InterestTagsUniqueId1",
+            "StreamId": "streamUniqueId1",
+            "UserId": "userUniqueId",
+            "Question": "",
+            "Conversation": [
+                "conversationUnique1",
+                "conversationUnique2",
+                "conversationUnique3"
+            ],
+            "UpVoteCount": 12,
+            "DownVoteCount": 2
+        },
+        {
+            "InterestTag": "InterestTagsUniqueId2",
+            "StreamId": "streamUniqueId2",
+            "UserId": "userUniqueId",
+            "Question": "",
+            "Conversation": [
+                "conversationUnique1",
+                "conversationUnique2",
+                "conversationUnique3"
+            ],
+            "UpVoteCount": 12,
+            "DownVoteCount": 2
+        }
+    ]
+}

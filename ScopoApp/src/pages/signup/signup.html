@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Create an Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
+
+    <ion-list>
+      <ion-item>
+        <ion-label color="primary" stacked>Name</ion-label>
+        <ion-input formControlName="name" type="text" placeholder="Your name" [class.invalid]="!signupForm.controls.name.valid && signupForm.controls.name.dirty">
+        </ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.name.valid  && signupForm.controls.name.dirty">
+        <p>Please enter a valid name.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Email</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!signupForm.controls.email.valid && signupForm.controls.email.dirty">
+        </ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && signupForm.controls.email.dirty">
+        <p>Please enter a valid email.</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Password</ion-label>
+        <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!signupForm.controls.password.valid && signupForm.controls.password.dirty">
+        </ion-input>
+      </ion-item>
+      <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && signupForm.controls.password.dirty">
+        <p>Your password needs more than 6 characters.</p>
+      </ion-item>
+
+      <div style="padding-left: 17px;">
+        <ion-label color="primary" stacked>Backgroud</ion-label>
+        <ion-input ng2-auto-complete [source]="backgroundTags" (ngModelChange)="getBackgroundTagFromInput($event)" placeholder="enter text"
+          formControlName="backgroundTag">
+        </ion-input>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-auto *ngFor="let tag of selectedBackgroundTags">
+              <ion-chip #chip1>                
+                <button ion-button clear color="light" (click)="deleteBackgroundTag(tag)">
+                    <ion-icon name="remove-circle"></ion-icon>
+                </button>
+                <ion-label>{{tag}}</ion-label>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div style="padding-left: 17px;">
+        <ion-label color="primary" stacked>Specialisation</ion-label>
+        <ion-input ng2-auto-complete [source]="specialisationTags" (ngModelChange)="getSpecialisationTagFromInput($event)" placeholder="enter text"
+          formControlName="specialisationTag">
+        </ion-input>
+
+        <ion-grid>
+          <ion-row>
+            <ion-col col-auto *ngFor="let tag of selectedspecialisationTags">
+              <ion-chip #chip1>                
+                <button ion-button clear color="light" (click)="deleteSpecialisationTag(tag)">
+                    <ion-icon name="remove-circle"></ion-icon>
+                </button>
+                <ion-label>{{tag}}</ion-label>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+
+      <button ion-button block type="submit" [disabled]="!signupForm.valid && (selectedspecialisationTags && selectedBackgroundTags)">
+      Create an Account
+    </button>
+    </ion-list>
+  </form>
+
+</ion-content>
